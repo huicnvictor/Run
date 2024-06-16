@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float speed = 4;
     public float turnSpeed = 4;
+    static public bool canMove = false;
     // public float horizontalInput;
 
     // Start is called before the first frame update
@@ -26,16 +27,18 @@ public class PlayerController : MonoBehaviour
         //   transform.Translate(Vector3.left * Time.deltaTime * turnSpeed * horizontalInput);
 
         //Keep player in the Boundary
-
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        if (canMove == true)
         {
-            if (this.gameObject.transform.position.x > LevelBoundary.leftside)
-            { transform.Translate(Vector3.left * Time.deltaTime * turnSpeed); }
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            if (this.gameObject.transform.position.x < LevelBoundary.rightside)
-            { transform.Translate(Vector3.left * Time.deltaTime * turnSpeed * -1); }
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                if (this.gameObject.transform.position.x > LevelBoundary.leftside)
+                { transform.Translate(Vector3.left * Time.deltaTime * turnSpeed); }
+            }
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                if (this.gameObject.transform.position.x < LevelBoundary.rightside)
+                { transform.Translate(Vector3.left * Time.deltaTime * turnSpeed * -1); }
+            }
         }
 
         /*  if (transform.position.x < LevelBoundary.leftside)
