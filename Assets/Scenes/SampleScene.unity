@@ -8412,6 +8412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pretzel
       objectReference: {fileID: 0}
+    - target: {fileID: 1673684814504558671, guid: 381b4876465ff66439c798bbd05934ae, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1855540051227901324, guid: 381b4876465ff66439c798bbd05934ae, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -8426,15 +8430,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855540051227901324, guid: 381b4876465ff66439c798bbd05934ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.11
+      value: -0.366
       objectReference: {fileID: 0}
     - target: {fileID: 1855540051227901324, guid: 381b4876465ff66439c798bbd05934ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.49
+      value: 1.778
       objectReference: {fileID: 0}
     - target: {fileID: 1855540051227901324, guid: 381b4876465ff66439c798bbd05934ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.18
+      value: 24.2
       objectReference: {fileID: 0}
     - target: {fileID: 1855540051227901324, guid: 381b4876465ff66439c798bbd05934ae, type: 3}
       propertyPath: m_LocalRotation.w
