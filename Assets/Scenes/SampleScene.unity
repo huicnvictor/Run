@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.01532289, g: 0.008514756, b: 0.017135702, a: 1}
+  m_IndirectSpecularColor: {r: 0.015215322, g: 0.008471081, b: 0.017082142, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -365,7 +365,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 91aee1aafdbae9d4fa97cf74ac953237, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (1)
@@ -399,11 +399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6664bcf37eb249b469f68e5cf4671962, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6664bcf37eb249b469f68e5cf4671962, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6664bcf37eb249b469f68e5cf4671962, type: 3}
       propertyPath: m_LocalPosition.x
@@ -920,7 +920,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: dbb985945aca8c54eb1c263945ea7516, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01
@@ -985,7 +985,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 028cd76fd94546d4c963f026bfc50ae3, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01
@@ -2188,7 +2188,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01
@@ -2629,6 +2629,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
+--- !u!1001 &404986851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1742483509}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.85
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+      propertyPath: m_Name
+      value: tree_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
 --- !u!4 &415958409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4310304732095800949, guid: cce04f533c148314abf74aff71206ec7, type: 3}
@@ -2873,7 +2942,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (3)
@@ -3473,7 +3542,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 52265ed94bbe75948ad33a7ea4dd6189, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.21
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5404,7 +5473,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01
@@ -6505,7 +6574,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (1)
@@ -6974,6 +7043,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   turnSpeed: 3
+  isJumping: 0
+  comingDown: 0
+  playerObject: {fileID: 1964475552}
 --- !u!143 &1072435193
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8500,7 +8572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01000011
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9014,7 +9086,7 @@ Transform:
   m_GameObject: {fileID: 1377865185}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.06, y: 0.74, z: -15.06}
+  m_LocalPosition: {x: 1.06, y: 0.74, z: -21}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9205,7 +9277,7 @@ Transform:
   m_GameObject: {fileID: 1397543673}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 4.47, z: 27.52}
+  m_LocalPosition: {x: -4, y: 4.47, z: 27.52}
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9326,7 +9398,7 @@ Transform:
   m_GameObject: {fileID: 1400191712}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 4.47, z: 4.65}
+  m_LocalPosition: {x: -2.5, y: 4.47, z: 4.65}
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9824,7 +9896,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (6)
@@ -10753,7 +10825,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (1)
@@ -11074,7 +11146,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (2)
@@ -11149,7 +11221,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (4)
@@ -11217,6 +11289,7 @@ Transform:
   - {fileID: 228850710}
   - {fileID: 181320025}
   - {fileID: 1805631283}
+  - {fileID: 1990073090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1763259917
@@ -12075,7 +12148,7 @@ Transform:
   m_GameObject: {fileID: 1872376527}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.26, y: 4.47, z: 18.78}
+  m_LocalPosition: {x: 7, y: 4.47, z: 18.78}
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12701,6 +12774,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
+--- !u!4 &1990073090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00ada2d395936fe4089b5fcb2f519b95, type: 3}
+  m_PrefabInstance: {fileID: 404986851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1999841906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12756,7 +12834,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (7)
@@ -12899,7 +12977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.14901961}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12950,7 +13028,7 @@ Transform:
   m_GameObject: {fileID: 2011241837}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.26, y: 4.47, z: 42.61}
+  m_LocalPosition: {x: 6, y: 4.47, z: 42.61}
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13858,7 +13936,7 @@ Transform:
   m_GameObject: {fileID: 2127993439}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.06, y: 0.74, z: -19.74}
+  m_LocalPosition: {x: 1.06, y: 0.74, z: 27.88}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14160,7 +14238,7 @@ Transform:
   m_GameObject: {fileID: 2142394868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.56, y: 4.47, z: -6.5}
+  m_LocalPosition: {x: -2, y: 4.47, z: -6.5}
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14307,7 +14385,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8ec79f1a924444a4d9ba45eae3508301, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b12c25d090ef114ab5ff6c2767ba275, type: 2}
     - target: {fileID: 919132149155446097, guid: e49133f50a2a7604782a1ba6b161f219, type: 3}
       propertyPath: m_Name
       value: mountain_terrain_01 (3)
