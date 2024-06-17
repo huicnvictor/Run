@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectBeer : MonoBehaviour
+public class CollectBrezn : MonoBehaviour
 {
     public AudioSource Collect;
 

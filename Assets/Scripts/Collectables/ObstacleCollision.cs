@@ -11,7 +11,7 @@ public class ObstacleCollision : MonoBehaviour
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         thePlayer.GetComponent<PlayerMove>().enabled = false;
-        charModel.GetComponent<Animator>().Play("");
+        charModel.GetComponent<Animator>().Play("Hit On Side Of Body");
     }
     
 }
