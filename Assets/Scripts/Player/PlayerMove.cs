@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public HealthBar healthBar;
+
     public float speed = 4;
     public float turnSpeed = 4;
     static public bool canMove = false;
@@ -11,6 +16,17 @@ public class PlayerMove : MonoBehaviour
     public bool comingDown = false;
     public GameObject playerObject;
 
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
 
     void Update()
     {
@@ -26,17 +42,22 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 if (this.gameObject.transform.position.x > LevelBoundary.leftside)
-                { transform.Translate(Vector3.left * Time.deltaTime * turnSpeed); 
+                {
+                    transform.Translate(Vector3.left * Time.deltaTime * turnSpeed);
                 }
             }
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 if (this.gameObject.transform.position.x < LevelBoundary.rightside)
-                { transform.Translate(Vector3.left * Time.deltaTime * turnSpeed * -1); 
+                {
+                    transform.Translate(Vector3.left * Time.deltaTime * turnSpeed * -1);
                 }
             }
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
             {
+                //Testing Damage
+                TakeDamage(2);
+
                 if (isJumping == false)
                 {
                     isJumping = true;
@@ -44,24 +65,24 @@ public class PlayerMove : MonoBehaviour
                     StartCoroutine(JumpSequence());
                 }
             }
-            
-            }
 
-
-            if (isJumping == true)
-            {
-                if (comingDown == false)
-                {
-                    transform.Translate(Vector3.up * Time.deltaTime * 3, Space.World);
-                }
-
-                if (comingDown == true)
-                {
-                    transform.Translate(Vector3.down * Time.deltaTime * 3, Space.World);
-                }
-
-            }
         }
+
+
+        if (isJumping == true)
+        {
+            if (comingDown == false)
+            {
+                transform.Translate(Vector3.up * Time.deltaTime * 3, Space.World);
+            }
+
+            if (comingDown == true)
+            {
+                transform.Translate(Vector3.down * Time.deltaTime * 3, Space.World);
+            }
+
+        }
+    }
 
 
     IEnumerator JumpSequence()
