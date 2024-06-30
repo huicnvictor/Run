@@ -9,15 +9,20 @@ public class PlayerMove : MonoBehaviour
 
     public HealthBar healthBar;
 
-    public float speed = 4;
+    public float initialSpeed = 10.0f;
+    public float maxSpeed = 30;
+    public float acceleration = 0.1f;
     public float turnSpeed = 4;
     static public bool canMove = false;
     public bool isJumping = false;
     public bool comingDown = false;
     public GameObject playerObject;
 
+    public float currentSpeed;
+
     void Start()
     {
+        currentSpeed = initialSpeed;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -30,9 +35,13 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (currentSpeed < maxSpeed )
+        {
+            currentSpeed += acceleration * Time.deltaTime;
+        }
 
         //Move the player forward based on vertical input
-        transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.World);
+        transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed, Space.World);
 
 
 
