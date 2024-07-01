@@ -8,21 +8,29 @@ public class TimerCountDown : MonoBehaviour
     public GameObject textDisplay;
     public int secondsLeft = 180;
     public bool takingAway = false;
+    private bool timerStarted = false;
 
     public void Start()
     {
         //textDisplay.GetComponent<Text>().text = secondsLeft +"sec";
         textDisplay.GetComponent<Text>().text = "0" + (secondsLeft / 60) + ":0" + (secondsLeft % 60);
+        StartCoroutine(StartTimerAfterDelay(4));
     }
 
+    IEnumerator StartTimerAfterDelay(int delaySeconds)
+    {
+        yield return new WaitForSeconds(delaySeconds);
+        StartCoroutine(TimerTake());
+        timerStarted = true;
+    }
     public void Update() {
 
-        if (takingAway == false && secondsLeft > 0) {
+        if (timerStarted && takingAway == false && secondsLeft > 0) {
             StartCoroutine(TimerTake());
         }
     }
     IEnumerator TimerTake() {
-    takingAway = true;
+        takingAway = true;
         yield return new WaitForSeconds(1);
         secondsLeft -= 1;
         if ((secondsLeft % 60)<10) {

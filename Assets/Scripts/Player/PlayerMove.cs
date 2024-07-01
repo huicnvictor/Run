@@ -17,7 +17,10 @@ public class PlayerMove : MonoBehaviour
     public bool isJumping = false;
     public bool comingDown = false;
     public GameObject playerObject;
-
+    public GameObject levelControl;
+    public GameObject timerCountDown;
+    public GameObject timerDisplay;
+    public GameObject healthDisplay;
     public float currentSpeed;
 
     void Start()
@@ -27,10 +30,29 @@ public class PlayerMove : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        CheckHealth();
+    }
+
+
+    public void CheckHealth()
+    {
+        if (currentHealth <= 0)
+        {
+            // 禁用玩家移动并触发游戏结束逻辑
+            this.enabled = false;
+            levelControl.GetComponent<LevelDistance>().enabled = false;
+            playerObject.GetComponent<Animator>().Play("Breathing Idle");
+            levelControl.GetComponent<EndRunSequence>().enabled = true;
+            timerCountDown.GetComponent<TimerCountDown>().enabled = false;
+            timerDisplay.SetActive(false);
+            healthDisplay.SetActive(false); 
+            // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
+            Debug.Log("Game Over");
+        }
     }
 
     void Update()
@@ -65,7 +87,7 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
             {
                 //Testing Damage
-                TakeDamage(2);
+                //TakeDamage(2);
 
                 if (isJumping == false)
                 {

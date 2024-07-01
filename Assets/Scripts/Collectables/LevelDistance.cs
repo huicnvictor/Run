@@ -7,6 +7,7 @@ using TMPro;
 public class LevelDistance : MonoBehaviour
 {
     public GameObject disDisplay;
+    public GameObject disEndDisplay;
     public int disRun;
     public bool addingDis = false;
     public float disDelay = 0.35f;
@@ -25,6 +26,7 @@ public class LevelDistance : MonoBehaviour
     {
         disRun += 1;
         disDisplay.GetComponent<TMP_Text>().text = "" + disRun;
+        disEndDisplay.GetComponent<TMP_Text>().text = "" + disRun;
         yield return new WaitForSeconds(disDelay);
         addingDis = false   ;
     }
