@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour
 
     public float initialSpeed = 10.0f;
     public float maxSpeed = 30;
-    public float acceleration = 0.1f;
+   // public static float acceleration = GameSettings.PlayerAcceleration;
     public float turnSpeed = 4;
     static public bool canMove = false;
     public bool isJumping = false;
@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
         currentSpeed = initialSpeed;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        
     }
 
     public void TakeDamage(int damage)
@@ -84,9 +85,11 @@ public class PlayerMove : MonoBehaviour
     }
     void Update()
     {
+       // Debug.Log(acceleration);
+        Debug.Log(GameSettings.PlayerAcceleration);
         if (currentSpeed < maxSpeed )
         {
-            currentSpeed += acceleration * Time.deltaTime;
+            currentSpeed += GameSettings.PlayerAcceleration * Time.deltaTime;
         }
 
         //Move the player forward based on vertical input
