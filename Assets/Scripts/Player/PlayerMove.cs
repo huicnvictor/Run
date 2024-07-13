@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     static public bool canMove = false;
     public bool isJumping = false;
     public bool comingDown = false;
+    public bool shielded = false;
+    public int shieldDuration = 5;
     public GameObject playerObject;
     public GameObject levelControl;
     public GameObject timerCountDown;
@@ -37,6 +39,18 @@ public class PlayerMove : MonoBehaviour
         CheckHealth();
     }
 
+    public void HealHealth(int heal)
+    {
+        if (currentHealth + heal > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {     
+            currentHealth += heal;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
 
     public void CheckHealth()
     {
@@ -55,6 +69,19 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void Shield()
+    {
+        StartCoroutine(ShieldRoutine());
+    }
+
+    private IEnumerator ShieldRoutine()
+    {
+        shielded = true;
+        GetComponent<MeshRenderer>().enabled = true;
+        yield return new WaitForSeconds(shieldDuration);
+        GetComponent<PlayerMove>().shielded = false;
+        GetComponent<MeshRenderer>().enabled = false;
+    }
     void Update()
     {
         if (currentSpeed < maxSpeed )
@@ -65,7 +92,19 @@ public class PlayerMove : MonoBehaviour
         //Move the player forward based on vertical input
         transform.Translate(Vector3.forward * Time.deltaTime * currentSpeed, Space.World);
 
-
+        if (timerCountDown.GetComponent<TimerCountDown>().secondsLeft == 0)
+        {
+            // 禁用玩家移动并触发游戏结束逻辑
+            this.enabled = false;
+            levelControl.GetComponent<LevelDistance>().enabled = false;
+            playerObject.GetComponent<Animator>().Play("Breathing Idle");
+            levelControl.GetComponent<EndRunSequence>().enabled = true;
+            timerCountDown.GetComponent<TimerCountDown>().enabled = false;
+            timerDisplay.SetActive(false);
+            healthDisplay.SetActive(false);
+            // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
+            Debug.Log("Game Over");
+        }
 
         //Keep player in the Boundary
         if (canMove == true)

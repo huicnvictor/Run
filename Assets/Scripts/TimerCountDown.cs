@@ -28,6 +28,7 @@ public class TimerCountDown : MonoBehaviour
         if (timerStarted && takingAway == false && secondsLeft > 0) {
             StartCoroutine(TimerTake());
         }
+        
     }
     IEnumerator TimerTake() {
         takingAway = true;
