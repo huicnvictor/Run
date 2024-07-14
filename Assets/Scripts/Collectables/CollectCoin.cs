@@ -10,9 +10,12 @@ public class CollectCoin : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        Collect.PlayOneShot(Collect.clip);
-        CollectbalControl.scoreCount += 1;
-        this.gameObject.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            Collect.PlayOneShot(Collect.clip);
+            CollectbalControl.scoreCount += 1;
+            this.gameObject.SetActive(false);
+        }
     }
 
 

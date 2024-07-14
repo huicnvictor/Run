@@ -9,10 +9,12 @@ public class CollectBeer : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-  
-        Collect.Play();
-        this.gameObject.SetActive(false);
-        thePlayer.GetComponent<PlayerMove>().Shield();
+        if (other.CompareTag("Player"))
+        {
+            Collect.Play();
+            this.gameObject.SetActive(false);
+            thePlayer.GetComponent<PlayerMove>().Shield();
+        }
     }
 
     

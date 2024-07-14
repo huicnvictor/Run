@@ -10,13 +10,16 @@ public class CollectBrezn : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        
-        if (thePlayer.GetComponent<PlayerMove>().currentHealth < thePlayer.GetComponent<PlayerMove>().maxHealth)
+        if (other.CompareTag("Player"))
         {
-            Heal.Play();
-            thePlayer.GetComponent<PlayerMove>().HealHealth(healAmount);
+            if (thePlayer.GetComponent<PlayerMove>().currentHealth < thePlayer.GetComponent<PlayerMove>().maxHealth)
+            {
+                Heal.Play();
+                thePlayer.GetComponent<PlayerMove>().HealHealth(healAmount);
+
+                this.gameObject.SetActive(false);
+            }
         }
-        this.gameObject.SetActive(false);
     }
     
 }
