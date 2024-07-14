@@ -9,17 +9,20 @@ public class ObstacleCollision : MonoBehaviour
     public AudioSource crashThud;
     public int damageAmount = 20;
 
+
     IEnumerator Respawn()
     {
         yield return new WaitForSeconds(1);
         this.gameObject.GetComponent<BoxCollider>().enabled = true;
+
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !thePlayer.GetComponent<PlayerMove>().isGameOver)
         {
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(Respawn());
+
 
             if (!thePlayer.GetComponent<PlayerMove>().shielded)
             {
@@ -29,5 +32,5 @@ public class ObstacleCollision : MonoBehaviour
             }
         }
     }
-    
+
 }

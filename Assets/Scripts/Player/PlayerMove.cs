@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -11,12 +12,13 @@ public class PlayerMove : MonoBehaviour
 
     public float initialSpeed = 10.0f;
     public float maxSpeed = 30;
-   // public static float acceleration = GameSettings.PlayerAcceleration;
+    // public static float acceleration = GameSettings.PlayerAcceleration;
     public float turnSpeed = 5;
     static public bool canMove = false;
     public bool isJumping = false;
     public bool comingDown = false;
     public bool shielded = false;
+    public bool isGameOver = false;
     public int shieldDuration = 5;
     public GameObject playerObject;
     public GameObject levelControl;
@@ -30,7 +32,7 @@ public class PlayerMove : MonoBehaviour
         currentSpeed = initialSpeed;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
+
     }
 
     public void TakeDamage(int damage)
@@ -48,7 +50,7 @@ public class PlayerMove : MonoBehaviour
             healthBar.SetHealth(currentHealth);
         }
         else
-        {     
+        {
             currentHealth += heal;
             healthBar.SetHealth(currentHealth);
         }
@@ -58,21 +60,22 @@ public class PlayerMove : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            // ½ûÓÃÍæ¼ÒÒÆ¶¯²¢´¥·¢ÓÎÏ·½áÊøÂß¼­
+            // 禁用玩家移动并触发游戏结束逻辑
             this.enabled = false;
+            this.isGameOver = true;
             this.GetComponent<BoxCollider>().enabled = false;
             playerObject.GetComponent<Animator>().Play("Defeat");
-            
+
             levelControl.GetComponent<EndRunSequence>().enabled = true;
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
-            healthDisplay.SetActive(false); 
-            // ÕâÀï¿ÉÒÔÌí¼ÓÓÎÏ·½áÊøÂß¼­£¬±ÈÈçÏÔÊ¾ÓÎÏ·½áÊø½çÃæµÈ
+            healthDisplay.SetActive(false);
+            // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
             Debug.Log("Game Over");
         }
     }
 
-    public void Shield()
+    /*public void Shield()
     {
         StartCoroutine(ShieldRoutine());
     }
@@ -82,14 +85,38 @@ public class PlayerMove : MonoBehaviour
         shielded = true;
         GetComponent<MeshRenderer>().enabled = true;
         yield return new WaitForSeconds(shieldDuration);
+        
         GetComponent<PlayerMove>().shielded = false;
         GetComponent<MeshRenderer>().enabled = false;
     }
+    */
+
+    private Coroutine shieldRoutine = null;
+
+    public void Shield()
+    {
+        if (shieldRoutine != null)
+        {
+            StopCoroutine(shieldRoutine);
+        }
+        shieldRoutine = StartCoroutine(ShieldRoutine());
+    }
+
+    private IEnumerator ShieldRoutine()
+    {
+        shielded = true;
+        GetComponent<MeshRenderer>().enabled = true;
+        yield return new WaitForSeconds(shieldDuration);
+
+        GetComponent<PlayerMove>().shielded = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        shieldRoutine = null;
+    }
     void Update()
     {
-       // Debug.Log(acceleration);
+        // Debug.Log(acceleration);
         Debug.Log(GameSettings.PlayerAcceleration);
-        if (currentSpeed < maxSpeed )
+        if (currentSpeed < maxSpeed)
         {
             currentSpeed += GameSettings.PlayerAcceleration * Time.deltaTime;
         }
@@ -99,17 +126,17 @@ public class PlayerMove : MonoBehaviour
 
         if (timerCountDown.GetComponent<TimerCountDown>().secondsLeft == 0)
         {
-            // ½ûÓÃÍæ¼ÒÒÆ¶¯²¢´¥·¢ÓÎÏ·½áÊøÂß¼­
+            // 禁用玩家移动并触发游戏结束逻辑
             this.enabled = false;
-            
+            this.isGameOver = true;
             this.GetComponent<BoxCollider>().enabled = false;
             playerObject.GetComponent<Animator>().Play("Victory");
-            
+
             levelControl.GetComponent<VictorySequence>().enabled = true;
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
             healthDisplay.SetActive(false);
-            // ÕâÀï¿ÉÒÔÌí¼ÓÓÎÏ·½áÊøÂß¼­£¬±ÈÈçÏÔÊ¾ÓÎÏ·½áÊø½çÃæµÈ
+            // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
             Debug.Log("Victory");
         }
 
@@ -156,6 +183,13 @@ public class PlayerMove : MonoBehaviour
             if (comingDown == true)
             {
                 transform.Translate(Vector3.down * Time.deltaTime * 3, Space.World);
+                if (transform.position.y >= 1.9f && transform.position.y <= 2.1f)
+                {
+                    isJumping = false;
+                    comingDown = false;
+                    playerObject.GetComponent<Animator>().Play("Standard Run");
+
+                }
             }
 
         }
@@ -166,9 +200,9 @@ public class PlayerMove : MonoBehaviour
     {
         yield return new WaitForSeconds(0.45f);
         comingDown = true;
-        yield return new WaitForSeconds(0.45f);
-        isJumping = false;
-        comingDown = false;
-        playerObject.GetComponent<Animator>().Play("Standard Run");
+        //yield return new WaitForSeconds(0.45f);
+        //isJumping = false;
+        //comingDown = false;
+        //playerObject.GetComponent<Animator>().Play("Standard Run");
     }
 }

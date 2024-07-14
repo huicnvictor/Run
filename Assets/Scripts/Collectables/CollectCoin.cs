@@ -18,7 +18,7 @@ public class CollectCoin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Collect.PlayOneShot(Collect.clip);
-            CollectbalControl.scoreCount += 1;
+            CollectbalControl.coinCount += 1;
             this.gameObject.SetActive(false);
             StartCoroutine(Respawn());
         }

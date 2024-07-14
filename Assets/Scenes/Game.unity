@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 76537322}
   - component: {fileID: 76537321}
   m_Layer: 5
-  m_Name: ScoreCount
+  m_Name: CoinCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6128,7 +6128,7 @@ GameObject:
   - component: {fileID: 331551743}
   - component: {fileID: 331551742}
   m_Layer: 5
-  m_Name: ScoreDisplay
+  m_Name: CoinDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10817,7 +10817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae15c2936a1dfee4da252d5d697d8264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveScore: {fileID: 331551740}
+  liveScore: {fileID: 76537319}
   endScreen: {fileID: 856147029}
   fadeOut: {fileID: 1899347901}
 --- !u!114 &547521397
@@ -10832,7 +10832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13156df79a3b7ce4e8bf3b7bab18f231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreCountDisplay: {fileID: 76537319}
+  coinCountDisplay: {fileID: 76537319}
   scoreEndDisplay: {fileID: 449099034}
   scoreVicDisplay: {fileID: 1198140065}
 --- !u!114 &547521398
@@ -10847,7 +10847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b8d19cec32b10499a9a1bf28f92264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveScore: {fileID: 331551740}
+  liveScore: {fileID: 76537319}
   victoryScreen: {fileID: 1044125908}
   fadeOut: {fileID: 1899347901}
 --- !u!1 &562320174
@@ -18006,7 +18006,7 @@ GameObject:
   - component: {fileID: 928332479}
   - component: {fileID: 928332478}
   m_Layer: 5
-  m_Name: ScoreBorder
+  m_Name: CoinBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22054,6 +22054,7 @@ MonoBehaviour:
   isJumping: 0
   comingDown: 0
   shielded: 0
+  isGameOver: 0
   shieldDuration: 5
   playerObject: {fileID: 1964475552}
   levelControl: {fileID: 547521390}
@@ -38952,7 +38953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 'Coin:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

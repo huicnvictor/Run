@@ -6,8 +6,9 @@ using TMPro;
 
 public class CollectbalControl : MonoBehaviour
 {
+    public static int coinCount;
     public static int scoreCount;
-    public GameObject scoreCountDisplay;
+    public GameObject coinCountDisplay;
     public GameObject scoreEndDisplay;
     public GameObject scoreVicDisplay;
   
@@ -15,7 +16,8 @@ public class CollectbalControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreCountDisplay.GetComponent<TMP_Text>().text = "" + scoreCount;
+        coinCountDisplay.GetComponent<TMP_Text>().text = "" + coinCount;
+        scoreCount = coinCount * GameSettings.multiplier;
         scoreEndDisplay.GetComponent<TMP_Text>().text = "" + scoreCount;
         scoreVicDisplay.GetComponent<TMP_Text>().text = "" + scoreCount;
         Score();

@@ -12,7 +12,7 @@ public class HighscoreTable : MonoBehaviour
 
     private void Awake()
     {
-        // ClearHighscores(); // 如果需要清除排行榜，可以解除注释
+         //ClearHighscores(); // 如果需要清除排行榜，可以解除注释
 
         entryContainer = transform.Find("highscoreEntryContainer");
         entryTemplate = entryContainer.Find("highscoreEntryTemplate");
