@@ -44,16 +44,16 @@ public class DifficultyManager : MonoBehaviour
     {
         switch (dropdown.value) {
             case 0://EASY
-                GameSettings.PlayerAcceleration = 0.1f;
+                GameSettings.PlayerAcceleration = 0.03f;
                 break;
                 case 1: //NORMAL
-                GameSettings.PlayerAcceleration = 0.2f;
+                GameSettings.PlayerAcceleration = 0.06f;
                 break;
                 case 2: //HARD
-                GameSettings.PlayerAcceleration = 0.3f;
+                GameSettings.PlayerAcceleration = 0.1f;
                 break;
                 default:
-                GameSettings.PlayerAcceleration = 0.1f;
+                GameSettings.PlayerAcceleration = 0.03f;
                 break;
         }
         Debug.Log(GameSettings.PlayerAcceleration);

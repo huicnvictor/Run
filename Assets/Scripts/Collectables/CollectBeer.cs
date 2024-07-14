@@ -6,7 +6,12 @@ public class CollectBeer : MonoBehaviour
 {
     public AudioSource Collect;
     public GameObject thePlayer;
-    
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(true);
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -14,6 +19,7 @@ public class CollectBeer : MonoBehaviour
             Collect.Play();
             this.gameObject.SetActive(false);
             thePlayer.GetComponent<PlayerMove>().Shield();
+            StartCoroutine(Respawn());
         }
     }
 

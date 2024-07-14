@@ -8,6 +8,13 @@ public class CollectBrezn : MonoBehaviour
     public GameObject thePlayer;
     public int healAmount = 20;
 
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(true);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -18,6 +25,7 @@ public class CollectBrezn : MonoBehaviour
                 thePlayer.GetComponent<PlayerMove>().HealHealth(healAmount);
 
                 this.gameObject.SetActive(false);
+                StartCoroutine(Respawn());
             }
         }
     }

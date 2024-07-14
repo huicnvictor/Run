@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     public float initialSpeed = 10.0f;
     public float maxSpeed = 30;
    // public static float acceleration = GameSettings.PlayerAcceleration;
-    public float turnSpeed = 4;
+    public float turnSpeed = 5;
     static public bool canMove = false;
     public bool isJumping = false;
     public bool comingDown = false;
