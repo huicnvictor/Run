@@ -1,4 +1,4 @@
-using System.Collections;
+锘縰sing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,7 +58,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            // 禁用玩家移动并触发游戏结束逻辑
+            // 陆没脫脙脥忙录脪脪脝露炉虏垄麓楼路垄脫脦脧路陆谩脢酶脗脽录颅
             this.enabled = false;
             this.GetComponent<BoxCollider>().enabled = false;
             playerObject.GetComponent<Animator>().Play("Defeat");
@@ -67,7 +67,7 @@ public class PlayerMove : MonoBehaviour
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
             healthDisplay.SetActive(false); 
-            // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
+            // 脮芒脌茂驴脡脪脭脤铆录脫脫脦脧路陆谩脢酶脗脽录颅拢卢卤脠脠莽脧脭脢戮脫脦脧路陆谩脢酶陆莽脙忙碌脠
             Debug.Log("Game Over");
         }
     }
@@ -99,7 +99,7 @@ public class PlayerMove : MonoBehaviour
 
         if (timerCountDown.GetComponent<TimerCountDown>().secondsLeft == 0)
         {
-            // 禁用玩家移动并触发游戏结束逻辑
+            // 陆没脫脙脥忙录脪脪脝露炉虏垄麓楼路垄脫脦脧路陆谩脢酶脗脽录颅
             this.enabled = false;
             
             this.GetComponent<BoxCollider>().enabled = false;
@@ -109,7 +109,7 @@ public class PlayerMove : MonoBehaviour
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
             healthDisplay.SetActive(false);
-            // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
+            // 脮芒脌茂驴脡脪脭脤铆录脫脫脦脧路陆谩脢酶脗脽录颅拢卢卤脠脠莽脧脭脢戮脫脦脧路陆谩脢酶陆莽脙忙碌脠
             Debug.Log("Victory");
         }
 

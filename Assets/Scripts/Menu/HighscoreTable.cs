@@ -20,7 +20,7 @@ public class HighscoreTable : MonoBehaviour
         entryTemplate.gameObject.SetActive(false);
 
         // 此处加 new Entry
-        AddHighscoreEntry(10000, "CMK");
+       // AddHighscoreEntry(10000, "CMK");
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
@@ -58,7 +58,7 @@ public class HighscoreTable : MonoBehaviour
         float templateHeight = 30f;
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
-        entryRectTransform.anchoredPosition = new Vector2(-10, -templateHeight * transformList.Count - 35);
+        entryRectTransform.anchoredPosition = new Vector2(0, -50-templateHeight * transformList.Count);
         entryTransform.gameObject.SetActive(true);
 
         int rank = transformList.Count + 1;
@@ -100,17 +100,17 @@ public class HighscoreTable : MonoBehaviour
                 entryTransform.Find("trophy").GetComponent<Image>().color = Color.yellow;
                 break;
             case 2:
-                entryTransform.Find("trophy").GetComponent<Image>().color = Color.grey;
+                entryTransform.Find("trophy").GetComponent<Image>().color = Color.white;
                 break;
             case 3:
-                entryTransform.Find("trophy").GetComponent<Image>().color = Color.black;
+                entryTransform.Find("trophy").GetComponent<Image>().color = Color.green;
                 break;
         }
 
         transformList.Add(entryTransform);
     }
 
-    private void AddHighscoreEntry(int score, string name)
+    public static void AddHighscoreEntry(int score, string name)
     {
         // Create HighscoreEntry
         HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };
