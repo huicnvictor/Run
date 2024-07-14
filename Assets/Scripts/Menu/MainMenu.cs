@@ -7,8 +7,11 @@ public class MainMenu : MonoBehaviour
 {
 
 
+    public InputField nameInputField;
+
     public void PlayGame()
     {
+        GameSettings.playerName = nameInputField.text;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
