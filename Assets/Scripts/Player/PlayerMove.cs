@@ -60,8 +60,9 @@ public class PlayerMove : MonoBehaviour
         {
             // 禁用玩家移动并触发游戏结束逻辑
             this.enabled = false;
-            
+            this.GetComponent<BoxCollider>().enabled = false;
             playerObject.GetComponent<Animator>().Play("Defeat");
+            
             levelControl.GetComponent<EndRunSequence>().enabled = true;
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
@@ -101,8 +102,10 @@ public class PlayerMove : MonoBehaviour
             // 禁用玩家移动并触发游戏结束逻辑
             this.enabled = false;
             
+            this.GetComponent<BoxCollider>().enabled = false;
             playerObject.GetComponent<Animator>().Play("Victory");
-            levelControl.GetComponent<EndRunSequence>().enabled = true;
+            
+            levelControl.GetComponent<VictorySequence>().enabled = true;
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
             healthDisplay.SetActive(false);
