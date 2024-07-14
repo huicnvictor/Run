@@ -45,6 +45,7 @@ public class PlayerMove : MonoBehaviour
         if (currentHealth + heal > maxHealth)
         {
             currentHealth = maxHealth;
+            healthBar.SetHealth(currentHealth);
         }
         else
         {     
@@ -59,8 +60,8 @@ public class PlayerMove : MonoBehaviour
         {
             // 禁用玩家移动并触发游戏结束逻辑
             this.enabled = false;
-            levelControl.GetComponent<LevelDistance>().enabled = false;
-            playerObject.GetComponent<Animator>().Play("Breathing Idle");
+            
+            playerObject.GetComponent<Animator>().Play("Defeat");
             levelControl.GetComponent<EndRunSequence>().enabled = true;
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
@@ -99,14 +100,14 @@ public class PlayerMove : MonoBehaviour
         {
             // 禁用玩家移动并触发游戏结束逻辑
             this.enabled = false;
-            levelControl.GetComponent<LevelDistance>().enabled = false;
-            playerObject.GetComponent<Animator>().Play("Breathing Idle");
+            
+            playerObject.GetComponent<Animator>().Play("Victory");
             levelControl.GetComponent<EndRunSequence>().enabled = true;
             timerCountDown.GetComponent<TimerCountDown>().enabled = false;
             timerDisplay.SetActive(false);
             healthDisplay.SetActive(false);
             // 这里可以添加游戏结束逻辑，比如显示游戏结束界面等
-            Debug.Log("Game Over");
+            Debug.Log("Victory");
         }
 
         //Keep player in the Boundary

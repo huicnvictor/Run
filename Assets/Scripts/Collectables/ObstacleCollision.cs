@@ -11,15 +11,17 @@ public class ObstacleCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        
-        if(!thePlayer.GetComponent<PlayerMove>().shielded)
-        { 
-            charModel.GetComponent<Animator>().Play("Hit On Side Of Body");
-            crashThud.Play();
-            thePlayer.GetComponent<PlayerMove>().TakeDamage(damageAmount);
-        }
+        if (other.CompareTag("Player"))
+        {
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
 
+            if (!thePlayer.GetComponent<PlayerMove>().shielded)
+            {
+                charModel.GetComponent<Animator>().Play("Hit On Side Of Body");
+                crashThud.Play();
+                thePlayer.GetComponent<PlayerMove>().TakeDamage(damageAmount);
+            }
+        }
     }
     
 }

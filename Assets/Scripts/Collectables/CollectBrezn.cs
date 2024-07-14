@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class CollectBrezn : MonoBehaviour
 {
-    public AudioSource Collect;
+    public AudioSource Heal;
     public GameObject thePlayer;
     public int healAmount = 20;
 
     void OnTriggerEnter(Collider other)
     {
-            Collect.Play();
-            this.gameObject.SetActive(false);
+        
+        if (thePlayer.GetComponent<PlayerMove>().currentHealth < thePlayer.GetComponent<PlayerMove>().maxHealth)
+        {
+            Heal.Play();
             thePlayer.GetComponent<PlayerMove>().HealHealth(healAmount);
+        }
+        this.gameObject.SetActive(false);
     }
     
 }
