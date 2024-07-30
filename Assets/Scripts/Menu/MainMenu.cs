@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
 
             // 加载下一个场景（假设下一个场景在当前场景的 buildIndex + 1）
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            CollectbalControl.coinCount = 0;
         }
         else
         {

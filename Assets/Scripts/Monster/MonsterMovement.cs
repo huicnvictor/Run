@@ -33,7 +33,7 @@ public class MonsterPatrol : MonoBehaviour
                 Transform targetPoint = patrolPoints[currentPointIndex];
                 Vector3 direction = new Vector3(targetPoint.position.x - transform.position.x, 0, 0);
                 transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
-                animator.SetFloat("Speed", moveSpeed);
+                //animator.SetFloat("Speed", moveSpeed);
 
                 if (Vector3.Distance(transform.position, targetPoint.position) < 0.1f)
                 {
